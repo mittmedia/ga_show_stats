@@ -1,7 +1,7 @@
 <?php
 /*
-Plugin Name: OAS settings
-Plugin URI: https://github.com/mittmedia/oas_settings
+Plugin Name: GA show stats
+Plugin URI: https://github.com/mittmedia/ga_show_stats
 Description: Setup statistic tags for OAS
 Version: 1.0.0
 Author: Fredrik Sundström
