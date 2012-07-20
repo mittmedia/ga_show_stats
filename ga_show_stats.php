@@ -41,10 +41,10 @@ $ga_show_stats_app = new \WpMvc\Application();
 $ga_show_stats_app->init( 'GaShowStats', WP_PLUGIN_DIR . '/ga_show_stats' );
 
 // WP: Add pages
-add_action( "network_admin_menu", "ga_show_stats" );
+add_action( "admin_menu", "ga_show_stats" );
 function ga_show_stats()
 {
-  add_submenu_page( 'settings.php', 'GA Statistics', 'GA Statistics', 'Super Admin', 'ga_show_stats', 'ga_show_stats_page');
+  add_menu_page( 'Statistics', 'Statistics', 'Editor', 'ga_show_stats', 'ga_show_stats_page');
 }
 
 function ga_show_stats_page()
@@ -52,4 +52,11 @@ function ga_show_stats_page()
   global $ga_show_stats_app;
 
   $ga_show_stats_app->ga_show_stats_controller->index();
+}
+
+add_filter('admin_head', 'ga_show_stats_add_scripts_and_styles');
+function ga_show_stats_add_scripts_and_styles() {
+  if (isset( $_GET['page'] ) && $_GET['page'] == 'ga_show_stats') {
+    echo '<script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>';
+  }
 }
