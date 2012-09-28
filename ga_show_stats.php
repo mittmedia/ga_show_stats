@@ -44,7 +44,7 @@ $ga_show_stats_app->init( 'GaShowStats', WP_PLUGIN_DIR . '/ga_show_stats' );
 add_action( "admin_menu", "ga_show_stats" );
 function ga_show_stats()
 {
-  add_menu_page( 'Statistics', 'Statistics', 'Editor', 'ga_show_stats', 'ga_show_stats_page');
+  add_menu_page( 'Statistics', 'Statistics', 'edit_posts', 'ga_show_stats', 'ga_show_stats_page');
 }
 
 function ga_show_stats_page()

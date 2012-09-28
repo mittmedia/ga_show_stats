@@ -19,13 +19,14 @@ namespace GaShowStats
       #session_start();
 
       $client = new \apiClient();
-      $client->setApplicationName("Google Analytics PHP Starter Application");
+      $client->setApplicationName("Bloggportalen");
 
       // Visit https://code.google.com/apis/console?api=analytics to generate your
       // client id, client secret, and to register your redirect uri.
       $client->setClientId('707664871246-fqku20umkv8v54ofcf9jpmntmrip7g17.apps.googleusercontent.com');
-      $client->setClientSecret('nYe1sT2TuyoB-SaOOSMDNjky');
-      $client->setRedirectUri('http://blogg.dt.se/wp-admin/network/settings.php?page=ga_show_stats');
+      $client->setClientSecret('-khMwOgImmB4GPFM3glJgIdu');
+      $client->setRedirectUri('http://blogg.allehanda.se/wp-admin/admin.php?page=ga_show_stats');
+      $client->setScopes(array('https://www.googleapis.com/auth/analytics.readonly'));
       #$client->setDeveloperKey('insert_your_developer_key');
 
       $service = new \apiAnalyticsService($client);
